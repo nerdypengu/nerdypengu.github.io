@@ -32,10 +32,30 @@
       rel="stylesheet"
     />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
+
+    <script>
+      function validateForm() {
+        var nama = document.getElementById("name");
+        var email = document.getElementById("email");
+
+        if (nama.value == "") {
+          //isian kosong, berarti textbox tidak diisi / kosong
+          alert("Nama harus diisi!");
+          x.focus();
+          return false;
+        }
+
+        if (email.value == "") {
+          alert("email harus diisi");
+          nrp.focus();
+          return false;
+        }
+        return true; //boleh diberi boleh tida, karena default function adalah true. Pencegahan nilai false berfungsi supaya tidak jadi dikirimkan.
+      }
+    </script>
   </head>
 
   <body>
@@ -585,15 +605,20 @@
             ></iframe>
           </div>
 
-          <div class="col-lg-6">
-            <form
-              role="form"
-              action="https://nerdypengu.github.io/"
-              class="php-email-form"
-            >
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <label class="form-control border-0" name="name">Nama</label>
+          <div
+            class="col-lg-6 info-box"
+            style="background: white; box-shadow: #110a26"
+          >
+            <h3>Send Us A Message</h3>
+            <form id="contact-form" data-sb-form-api-token="API_TOKEN">
+              <div class="row mx-3">
+                <div class="form-group">
+                  <label
+                    class="form-control border-0"
+                    style="text-align: left"
+                    name="name"
+                    >Nama</label
+                  >
                   <input
                     type="text"
                     name="name"
@@ -601,10 +626,22 @@
                     id="name"
                     placeholder="Your Name"
                     required
+                    data-sb-validations="required"
                   />
+                  <div
+                    class="invalid-feedback"
+                    data-sb-feedback="name:required"
+                  >
+                    A name is required.
+                  </div>
                 </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <label class="form-control border-0" name="email"
+              </div>
+              <div class="row mx-3">
+                <div class="form-group mt-2">
+                  <label
+                    class="form-control border-0"
+                    name="email"
+                    style="text-align: left"
                     >Email</label
                   >
                   <input
@@ -614,39 +651,63 @@
                     id="email"
                     placeholder="Your Email"
                     required
+                    data-sb-validations="required,email"
                   />
+                  <div
+                    class="invalid-feedback"
+                    data-sb-feedback="email:required"
+                  >
+                    An email is required.
+                  </div>
+                  <div class="invalid-feedback" data-sb-feedback="email:email">
+                    Email is not valid.
+                  </div>
                 </div>
               </div>
-              <div class="form-group mt-3">
-                <label class="form-control border-0" name="subject"
-                  >Subject</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  name="subject"
-                  id="subject"
-                  required
-                />
-              </div>
-              <div class="form-group mt-3">
+              <div class="form-group m-lg-3">
                 <textarea
                   class="form-control"
-                  name="message"
+                  id="message"
                   rows="5"
                   placeholder="Enter Your Message Here"
                   required
+                  data-sb-validations="required"
                 ></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">
-                  Your message has been sent. Thank you!
+                <div
+                  class="invalid-feedback"
+                  data-sb-feedback="message:required"
+                >
+                  A message is required.
                 </div>
               </div>
+              <!-- Submit success message-->
+              <!---->
+              <!-- This is what your users will see when the form-->
+              <!-- has successfully submitted-->
+              <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center mb-3">
+                  <div class="fw-bolder">Form submission successful!</div>
+                  We Will Contact You Soon
+                </div>
+              </div>
+              <!-- Submit error message-->
+              <!---->
+              <!-- This is what your users will see when there is-->
+              <!-- an error submitting the form-->
+              <div class="d-none" id="submitErrorMessage">
+                <div class="text-center text-danger mb-3">
+                  Error sending message!
+                </div>
+              </div>
+              <!-- Submit Button-->
               <div class="text-center">
-                <button type="submit">Send Message</button>
+                <button
+                  class="btn btn-primary btn-xl text-uppercase disabled"
+                  id="submitButton"
+                  type="submit"
+                >
+                  Send Message
+                </button>
               </div>
             </form>
           </div>
@@ -674,14 +735,6 @@
             <div class="col-lg-2 col-md-6 footer-links"></div>
 
             <div class="col-lg-3 col-md-6 footer-links"></div>
-
-            <div class="col-lg-4 col-md-6 footer-newsletter">
-              <h4>Join Our Newsletter</h4>
-              <form action="" method="post">
-                <input type="email" name="email" />
-                <input type="submit" value="Subscribe" />
-              </form>
-            </div>
           </div>
         </div>
       </div>
@@ -727,5 +780,6 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
   </body>
 </html>
