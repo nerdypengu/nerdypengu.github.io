@@ -129,12 +129,12 @@ h2{
 #header.header-scrolled,
 #header.header-inner-pages {
   background: rgba(0,0,0,.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 10px;
-    border:1px solid rgba(255, 255, 255, 0.095);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.625);
-  padding: 12px 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border:1px solid rgba(255, 255, 255, 0.095);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.625);
+  padding: 3px 0;
 
 }
 
@@ -584,7 +584,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #5846f9;
+  background: #7a6bff;
   bottom: 0;
   left: calc(50% - 25px);
 }
@@ -658,163 +658,83 @@ section {
   left: 0;
   padding: 30px;
   border-radius: var(--bs-card-inner-border-radius);
+}
+
+.text-hover:hover{
+  background: rgb(0, 0, 0);
+  background: linear-gradient(360deg,rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%); 
+  border-radius: 2%;
+  text-decoration: underline;
   
 }
 
-/*--------------------------------------------------------------
-# Counts
---------------------------------------------------------------*/
-.counts {
-  background: linear-gradient(90deg, rgba(88, 70, 249, 0.5) 0%, rgba(123, 39, 216, 0.5) 100%), url("../img/counts-bg.png") center center no-repeat;
-  padding: 80px 0 60px 0;
+.text-hover{
+  background: rgb(0, 0, 0);
+  background: linear-gradient(360deg,rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 70%); 
+  border-radius: 2%;
+  transition: 0.3s;
 }
 
-.counts .counters span {
-  font-size: 48px;
-  display: block;
-  color: #fff;
-  font-weight: 600;
+/*--------------------------------------------------------------
+# Games
+--------------------------------------------------------------*/
+#game .btn-get-started1{
   font-family: "Poppins", sans-serif;
-}
-
-.counts .counters p {
-  padding: 0;
-  margin: 0 0 20px 0;
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
-.services .icon-box {
-  text-align: center;
-  padding: 70px 20px 80px 20px;
-  transition: all ease-in-out 0.3s;
-  background: #fff;
-}
-
-.services .icon-box .icon {
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: ease-in-out 0.3s;
-  position: relative;
-}
-
-.services .icon-box .icon i {
-  font-size: 36px;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 5px;
   transition: 0.5s;
-  position: relative;
+  margin-top: 30px;
+  color: white;
+  border: 2px solid white;
 }
 
-.services .icon-box .icon svg {
-  position: absolute;
-  top: 0;
-  left: 0;
+#game .btn-get-started1:hover {
+  background: #0032bb;
+  color: white;
 }
 
-.services .icon-box .icon svg path {
+#game .btn-get-started2{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 5px;
   transition: 0.5s;
-  fill: #f5f5f5;
+  margin-top: 30px;
+  color: white;
+  border: 2px solid white;
 }
 
-.services .icon-box h4 {
-  font-weight: 600;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
+#game .btn-get-started2:hover {
+  background: #58412e;
+  color: white;
 }
 
-.services .icon-box h4 a {
-  color: #2c4964;
-  transition: ease-in-out 0.3s;
+#game .btn-get-started3{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 5px;
+  transition: 0.5s;
+  margin-top: 30px;
+  color: white;
+  border: 2px solid white;
 }
 
-.services .icon-box p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
+#game .btn-get-started3:hover {
+  background: #000000;
+  color: white;
 }
 
-.services .icon-box:hover {
-  border-color: #fff;
-  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-}
-
-.services .iconbox-blue i {
-  color: #47aeff;
-}
-
-.services .iconbox-blue:hover .icon i {
-  color: #fff;
-}
-
-.services .iconbox-blue:hover .icon path {
-  fill: #47aeff;
-}
-
-.services .iconbox-orange i {
-  color: #ffa76e;
-}
-
-.services .iconbox-orange:hover .icon i {
-  color: #fff;
-}
-
-.services .iconbox-orange:hover .icon path {
-  fill: #ffa76e;
-}
-
-.services .iconbox-pink i {
-  color: #e80368;
-}
-
-.services .iconbox-pink:hover .icon i {
-  color: #fff;
-}
-
-.services .iconbox-pink:hover .icon path {
-  fill: #e80368;
-}
-
-.services .iconbox-yellow i {
-  color: #ffbb2c;
-}
-
-.services .iconbox-yellow:hover .icon i {
-  color: #fff;
-}
-
-.services .iconbox-yellow:hover .icon path {
-  fill: #ffbb2c;
-}
-
-.services .iconbox-red i {
-  color: #ff5828;
-}
-
-.services .iconbox-red:hover .icon i {
-  color: #fff;
-}
-
-.services .iconbox-red:hover .icon path {
-  fill: #ff5828;
-}
-
-.services .iconbox-teal i {
-  color: #11dbcf;
-}
-
-.services .iconbox-teal:hover .icon i {
-  color: #fff;
-}
-
-.services .iconbox-teal:hover .icon path {
-  fill: #11dbcf;
-}
 
 /*--------------------------------------------------------------
 # Features
@@ -1512,7 +1432,7 @@ section {
 #footer {
   color: #fff;
   font-size: 14px;
-  background: linear-gradient(45deg, rgba(86, 58, 250, 0.9) 0%, rgba(116, 15, 214, 0.9) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+  background: linear-gradient(35deg, rgba(190, 237, 255, 0.9) 0%,rgba(0, 35, 209, 0.9) 100%);
   background-size: cover;
 }
 
@@ -1623,7 +1543,7 @@ section {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: rgba(123, 39, 216, 0.8);
+  background: rgb(0, 25, 185);
   color: #fff;
   transition: 0.3s;
   border-radius: 0 5px 5px 0;
@@ -1631,7 +1551,7 @@ section {
 }
 
 #footer .footer-newsletter form input[type=submit]:hover {
-  background: #5846f9;
+  background: #0d0080;
 }
 
 #footer .copyright-wrap {
